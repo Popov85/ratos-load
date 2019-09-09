@@ -86,6 +86,7 @@ public class SessionPerformance {
                     ", avgTiming=" + Math.round(avgTiming) +
                     ", less50msTiming=" + Math.round(less50msTiming) +
                     ", less1sTiming=" + Math.round(less1sTiming) +
+                    ", timings=" + timings +
                     '}';
         }
     }
@@ -177,7 +178,8 @@ public class SessionPerformance {
             long finishNext = System.nanoTime();
             nextResponses.add((finishNext-startNext)/1000000);
             try {
-                Thread.sleep(prop.getNextDelay().toMillis());
+                long randomDelay = this.rnd.rnd(prop.getNextDelayMin().toMillis(), prop.getNextDelayMax().toMillis());
+                Thread.sleep(randomDelay);
             } catch (InterruptedException e) {
                 log.error("Interrupted thread...");
                 throw new RuntimeException(e);

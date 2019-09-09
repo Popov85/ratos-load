@@ -14,8 +14,8 @@ public class RestTemplateFactory {
         return new RestTemplateBuilder()
                 .requestFactory(new ClientHttpRequestFactorySupplier())
                 .basicAuthentication(login, password)
-                .setConnectTimeout(Duration.ofMinutes(5))
-                .setReadTimeout(Duration.ofMinutes(5))
+                .setConnectTimeout(Duration.ofMinutes(15))
+                .setReadTimeout(Duration.ofMinutes(15))
                 .build();
     }
 }

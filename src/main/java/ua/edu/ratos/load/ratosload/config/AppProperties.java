@@ -26,6 +26,7 @@ public class AppProperties {
     private Duration batchDelayMax;
 
     // for session test only
-    private Duration nextDelay;
+    private Duration nextDelayMin;
+    private Duration nextDelayMax;
 
 }

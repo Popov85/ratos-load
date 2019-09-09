@@ -18,9 +18,9 @@ public class AppConfig {
     @Bean
     public ClientHttpRequestFactory clientHttpRequestFactory() {
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
-        requestFactory.setReadTimeout(300 * 1000);
-        requestFactory.setConnectionRequestTimeout(300*1000);
-        requestFactory.setConnectTimeout(300*1000);
+        requestFactory.setReadTimeout(900 * 1000);
+        requestFactory.setConnectionRequestTimeout(900*1000);
+        requestFactory.setConnectTimeout(900*1000);
         return requestFactory;
     }
 
